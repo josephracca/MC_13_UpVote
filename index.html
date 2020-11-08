@@ -14,17 +14,13 @@
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <title>MC13 | UpVote</title>
+    <title>Day 3: PM Sessions - Web Unleashed 2020 – Crowdcast</title>
+    <link rel="shortcut icon" href="./images/CrowdCast.png" />
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
-<div class="shadow-sm p-3 mb-5 bg-white rounded">Small shadow</div>
-<div class="shadow p-3 mb-5 bg-white rounded">Regular shadow</div>
-<div class="shadow-lg p-3 mb-5 bg-white rounded">Larger shadow</div>
-    </div>
+
     <div class="container stickyFooter px-0 roundedTopCorners">
         <div class="borders roundedTopCorners shadow-sm">
             <h1 class="stickyHeader">Questions & Answers</h1>
@@ -32,33 +28,42 @@
         <div class="overflowScroll">
 
             <ul class="list-group py-3 px-3">
+                
                 <li class="list-group-item shadow-sm">
                     <div class="row">
-                        <div class="col-2 text-center px-0">
+                        <div class="col-2 text-center px-0 noselect">
                             <p>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" length="auto" viewBox="0 0 19 10">
                                     <style type="text/css">
                                     </style>
-                                    <path id="votebtn1" class="gray" d="M9.5 0L19 10H0L9.5 0z" />
+                                    <path id="votebtn2" class="gray" d="M9.5 0L19 10H0L9.5 0z" />
                                 </svg>
                                 <!-- <img id="votebtn1"class="py-0" src="./images/upArrow.svg" alt="upVote arrow"> -->
                                 <br>
-                                <span id="voteCount1" class="voteCount py-0 my-0">0</span>
+                                <span id="voteCount2" class="voteCount">0</span>
                                 <br>
-                                <span id="votePlural1" class="votesText">VOTES</span>
+                                <span id="votePlural2" class="votesText">VOTES</span>
+                                <br>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" length="auto" viewBox="0 0 19 10">
+                                    <style type="text/css">
+                                    </style>
+                                    <path id="downvotebtn" class="gray" d="M9.5 10L0 0h19L9.5 10z" />
+                                </svg>
                             </p>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 pr-4">
                             <p class="userQuestion">
                                 Do you believe it is still important to have a degree in CS or is that loosing
                                 importance now for
                                 employers?</p>
                             <p>
                             <p class="userName"><img class="mr-2 clipCircle"
-                                    src="https://s.gravatar.com/avatar/c8ed43851fab368840aec42ff89be036?d=retro"
+                                    src="./images/JPavatar.png"
                                     width="34px" height="auto" alt="user-supplied avatar">Joseph Perez</p>
-                            <p class="commentsBtn">COMMENT</p>
-                            <p id="comment1" class="userComments">
+                            <p id="inputToggle"class="commentsBtn">COMMENT</p>
+
+                            <textArea id="inputField" placeholder="Type and press enter." class=""></textArea>
+                            <p id="comment1" class="userComments pt-3">
                                 <strong>Matt Kaatman</strong> It’s never been important for web development. Much more
                                 important for
                                 other focuses.
@@ -75,48 +80,6 @@
                                 utility code to make the function more portable.
                             </p>
                             <span id="commentToggle1" class="commentsBtn red">HIDE COMMENTS</span>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item shadow-sm">
-                    <div class="row">
-                        <div class="col-2 text-center px-0">
-                            <p>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" length="auto" viewBox="0 0 19 10">
-                                    <style type="text/css">
-                                    </style>
-                                    <path id="votebtn2" class="gray" d="M9.5 0L19 10H0L9.5 0z" />
-                                </svg>
-                                <!-- <img id="votebtn1"class="py-0" src="./images/upArrow.svg" alt="upVote arrow"> -->
-                                <br>
-                                <span id="voteCount2" class="voteCount py-0 my-0">0</span>
-                                <br>
-                                <span id="votePlural2" class="votesText">VOTES</span>
-                            </p>
-                        </div>
-                        <div class="col-10">
-                            <p class="userQuestion">
-                                Do you believe it is still important to have a degree in CS or is that loosing
-                                importance now for
-                                employers?</p>
-                            <p>
-                            <p class="userName"><img class="mr-2 clipCircle"
-                                    src="https://s.gravatar.com/avatar/c8ed43851fab368840aec42ff89be036?d=retro"
-                                    width="34px" height="auto" alt="user-supplied avatar">Joseph Perez</p>
-                            <p class="commentsBtn">COMMENT</p>
-                            <p class="userComments">
-                                <strong>Matt Kaatman</strong> It’s never been important for web development. Much more
-                                important for
-                                other focuses.
-                                <strong>Christopher Aranadi</strong> In my experience a CS degree will help a lot for
-                                roles like
-                                Machine Learning, AI, Software Architects, etc because in those places they apply a lot
-                                of
-                                fundamental skills taught in CS classes. I agree with Matt above, for web dev it’s more
-                                of an
-                                asset</p>
-                            <span class="commentsBtn red">HIDE 2 COMMENTS</span>
                             </p>
                         </div>
                     </div>
