@@ -28,7 +28,11 @@ upVotebtn.addEventListener('click', function () {
     totalVotes++;
     voteCount.innerText = totalVotes;
     downvotebtn.classList.add = 'd-none';
-  } else {
+  } 
+  else if (totalVotes == 100){
+    alert('Max Votes Reached')
+  }
+  else {
     voteCount.innerText = totalVotes;
   }
   voteTextDisplay();
@@ -49,9 +53,8 @@ downvotebtn.addEventListener('click', function () {
 voteTextDisplay = function () {
   if (totalVotes == 1) {
     votePlural.innerText = 'VOTE';
-  } else if (totalVotes == 100) {
-    votePlural.innerText = 'VOTES (MAX)';
-  } else {
+  } 
+  else {
     votePlural.innerText = 'VOTES';
   }
 }
