@@ -1,91 +1,72 @@
-// alert('Hello!');
+let voteCount = document.getElementById('voteCount');
 
-let voteCount1 = document.getElementById("voteCount1");
-let votebtn1 = document.getElementById("votebtn1");
-let votePlural1 = document.getElementById("votePlural1");
+let upVotebtn = document.getElementById('upVotebtn');
+let downvotebtn = document.getElementById('downvotebtn');
 
-let totalVotes1 = 0;
-let clicked1 = false;
+let votePlural = document.getElementById('votePlural');
 
-votebtn1.addEventListener("click", function () {
-  //    first click will set bool to true
+let totalVotes = 0;
 
-  if (clicked1 == false) {
-    clicked1 = true;
-    totalVotes1++;
-    voteCount1.innerText = totalVotes1;
-    votebtn1.classList = "red";
+//==================TOGGLES INPUT FIELD ON/FF==============================
+
+let inputToggle = document.getElementById('inputToggle');
+
+inputToggle.addEventListener('click', function () {
+  if (inputField.classList.contains('d-none')) {
+    inputField.classList.remove('d-none');
+    inputToggle.innerText = 'CANCEL';
   } else {
-    clicked1 = false;
-    totalVotes1--;
-    voteCount1.innerText = totalVotes1;
-    votebtn1.classList = "gray";
-  }
-
-  //    function will do the following: should be + or -
-  //    totalVotes1++;
-
-  if (totalVotes1 == 1) {
-    votePlural1.innerText = "VOTE";
-  } else {
-    votePlural1.innerText = "VOTES";
+    inputField.classList.add('d-none');
+    inputToggle.innerText = 'COMMENT';
   }
 });
 
-let voteCount2 = document.getElementById("voteCount2");
-let votebtn2 = document.getElementById("votebtn2");
-let votePlural2 = document.getElementById("votePlural2");
+//==================CONTROLS VOTE COUNT==============================
 
-let totalVotes2 = 0;
-let clicked2 = false;
-
-votebtn2.addEventListener("click", function () {
-  //    first click will set bool to true
-
-  if (clicked2 == false) {
-    clicked2 = true;
-    totalVotes2++;
-    voteCount2.innerText = totalVotes2;
-    votebtn2.classList = "red";
+upVotebtn.addEventListener('click', function () {
+  if (totalVotes < 100) {
+    totalVotes++;
+    voteCount.innerText = totalVotes;
+    downvotebtn.classList.add = 'd-none';
   } else {
-    clicked2 = false;
-    totalVotes2--;
-    voteCount2.innerText = totalVotes2;
-    votebtn2.classList = "gray";
+    voteCount.innerText = totalVotes;
   }
-
-  //    function will do the following: should be + or -
-  //    totalVotes2++;
-
-  if (totalVotes2 == 1) {
-    votePlural2.innerText = "VOTE";
-  } else {
-    votePlural2.innerText = "VOTES";
-  }
+  voteTextDisplay();
 });
 
-let comment1 = document.getElementById('comment1');
-let commentToggle1 = document.getElementById('commentToggle1')
+downvotebtn.addEventListener('click', function () {
+  if (totalVotes > 0) {
+    totalVotes--;
+    voteCount.innerText = totalVotes;
+  } else {
+    alert('Cannot Down Vote Less than 0');
+  }
+  voteTextDisplay();
+});
 
-commentToggle1.addEventListener
+//==================CONTROLS PLURALITY==============================
 
-('click', function(){
-//we want to target comment1 or comment div
-// let showComments = true;
-if(comment1.classList.contains('d-none')){
-    comment1.classList.remove('d-none');
-    commentToggle1.innerText = "HIDE COMMENTS";
-    
-}
-else{
-    //remove d-none
-    comment1.classList.add('d-none');
-    commentToggle1.innerText = "SHOW COMMENTS";
+voteTextDisplay = function () {
+  if (totalVotes == 1) {
+    votePlural.innerText = 'VOTE';
+  } else if (totalVotes == 100) {
+    votePlural.innerText = 'VOTES (MAX)';
+  } else {
+    votePlural.innerText = 'VOTES';
+  }
 }
 
+//==================CONTROLS COMMENT VISIBILITY==============================
+
+let comment = document.getElementById('comment');
+let commentToggle = document.getElementById('commentToggle');
+
+commentToggle.addEventListener('click', function () {
+  if (comment.classList.contains('d-none')) {
+    comment.classList.remove('d-none');
+    commentToggle.innerText = 'HIDE COMMENTS';
+  } else {
+    comment.classList.add('d-none');
+    commentToggle.innerText = 'SHOW COMMENTS';
+  }
 });
-
-
-//  NOTE: if this were a real website, we would want to send that information to the main server so that it could tally up the counts, but only once per unique user
-
-//  if and when a new question is asked, javascript would assign that button id as well as the ids for the voteCount and display below

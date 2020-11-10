@@ -7,7 +7,10 @@ body {
     background-repeat: no-repeat;
     background-position: bottom right;
     background-attachment: fixed;
+}
 
+.pAdjust{
+    line-height: 0px;
 }
 
 .stickyFooter {
@@ -60,7 +63,7 @@ body {
     border-style: solid;
 }
 
-.roundedTopCorners{
+.roundedTopCorners {
     border-radius: 5px 5px 0 0;
 }
 
@@ -80,16 +83,49 @@ body {
     color: #EC5F3D;
 }
 
+
+.grey,
 .gray {
     fill: #A5A5A5;
 }
-
-.clipCircle{
-    clip-path: circle(50%);
-
+.grey:hover {
+    fill: #a8e7a8;
 }
 
-.gray:hover{
-    fill: #eeaa99;
+.clipCircle {
+    clip-path: circle(50%);
+}
 
+.gray:hover {
+    fill: #eeaa99;
+}
+
+
+
+/* BELOW DISABLES SELECTION ON "VOTES" TEXT IN CASE SOMEONE IS CLICK HAPPY*/
+.noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+    width: 100%;
+    font-size: 12px;
+    height: 75px;
+    color: #b1b1b1;
+    border-color: rgb(175, 175, 175);
+    border-radius: 5px;
 }
