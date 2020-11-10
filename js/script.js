@@ -1,78 +1,72 @@
-let voteCount1 = document.getElementById("voteCount1");
-let votebtn1 = document.getElementById("votebtn1");
-let votePlural1 = document.getElementById("votePlural1");
+let voteCount = document.getElementById('voteCount');
 
-let totalVotes1 = 0;
-let clicked1 = false;
+let upVotebtn = document.getElementById('upVotebtn');
+let downvotebtn = document.getElementById('downvotebtn');
 
-let voteCount2 = document.getElementById("voteCount2");
-let votebtn2 = document.getElementById("votebtn2");
-let downvotebtn = document.getElementById("downvotebtn");
-let votePlural2 = document.getElementById("votePlural2");
+let votePlural = document.getElementById('votePlural');
 
-let totalVotes2 = 0;
-let clicked2 = false;
+let totalVotes = 0;
 
-let inputToggle = document.getElementById("inputToggle");
+//==================TOGGLES INPUT FIELD ON/FF==============================
 
-inputToggle.addEventListener("click", function () {
-  if (inputField.classList.contains("d-none")) {
-    inputField.classList.remove("d-none");
-    inputToggle.innerText = "CANCEL";
+let inputToggle = document.getElementById('inputToggle');
+
+inputToggle.addEventListener('click', function () {
+  if (inputField.classList.contains('d-none')) {
+    inputField.classList.remove('d-none');
+    inputToggle.innerText = 'CANCEL';
   } else {
-    inputField.classList.add("d-none");
-    inputToggle.innerText = "COMMENT";
+    inputField.classList.add('d-none');
+    inputToggle.innerText = 'COMMENT';
   }
 });
 
-downvotebtn.addEventListener("click", function () {
-  if (totalVotes2 > 0) {
-    totalVotes2--;
-    voteCount2.innerText = totalVotes2;
-    downvotebtn.classList.add = "red";
+//==================CONTROLS VOTE COUNT==============================
+
+upVotebtn.addEventListener('click', function () {
+  if (totalVotes < 100) {
+    totalVotes++;
+    voteCount.innerText = totalVotes;
+    downvotebtn.classList.add = 'd-none';
   } else {
+    voteCount.innerText = totalVotes;
+  }
+  voteTextDisplay();
+});
+
+downvotebtn.addEventListener('click', function () {
+  if (totalVotes > 0) {
+    totalVotes--;
+    voteCount.innerText = totalVotes;
+  } else {
+    alert('Cannot Down Vote Less than 0');
   }
   voteTextDisplay();
 });
 
-votebtn2.addEventListener("click", function () {
-  if (totalVotes2 < 100) {
-    totalVotes2++;
-    voteCount2.innerText = totalVotes2;
-    votebtn2.classList = "green";
-    downvotebtn.classList.add = "d-none";
-  } else {
-    voteCount2.innerText = totalVotes2;
-  }
-  voteTextDisplay();
-});
+//==================CONTROLS PLURALITY==============================
 
 voteTextDisplay = function () {
-  if (totalVotes2 == 1) {
-    votePlural2.innerText = "VOTE";
-  } else if (totalVotes2 == 100) {
-    votePlural2.innerText = "VOTES (MAX)";
+  if (totalVotes == 1) {
+    votePlural.innerText = 'VOTE';
+  } else if (totalVotes == 100) {
+    votePlural.innerText = 'VOTES (MAX)';
   } else {
-    votePlural2.innerText = "VOTES";
+    votePlural.innerText = 'VOTES';
   }
 }
 
-let comment1 = document.getElementById("comment1");
-let commentToggle1 = document.getElementById("commentToggle1");
+//==================CONTROLS COMMENT VISIBILITY==============================
 
-commentToggle1.addEventListener("click", function () {
-  //we want to target comment1 or comment div
-  // let showComments = true;
-  if (comment1.classList.contains("d-none")) {
-    comment1.classList.remove("d-none");
-    commentToggle1.innerText = "HIDE COMMENTS";
+let comment = document.getElementById('comment');
+let commentToggle = document.getElementById('commentToggle');
+
+commentToggle.addEventListener('click', function () {
+  if (comment.classList.contains('d-none')) {
+    comment.classList.remove('d-none');
+    commentToggle.innerText = 'HIDE COMMENTS';
   } else {
-    //remove d-none
-    comment1.classList.add("d-none");
-    commentToggle1.innerText = "SHOW COMMENTS";
+    comment.classList.add('d-none');
+    commentToggle.innerText = 'SHOW COMMENTS';
   }
 });
-
-//  NOTE: if this were a real website, we would want to send that information to the main server so that it could tally up the counts, but only once per unique user
-
-//  if and when a new question is asked, javascript would assign that button id as well as the ids for the voteCount and display below

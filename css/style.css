@@ -9,6 +9,10 @@ body {
     background-attachment: fixed;
 }
 
+.pAdjust{
+    line-height: 0px;
+}
+
 .stickyFooter {
     position: absolute;
     bottom: 75px;
@@ -79,14 +83,13 @@ body {
     color: #EC5F3D;
 }
 
-.green {
-    /* fill: #3dec3d;
-    color: #3dec3d; */
-    fill: #A5A5A5;
-}
 
+.grey,
 .gray {
     fill: #A5A5A5;
+}
+.grey:hover {
+    fill: #a8e7a8;
 }
 
 .clipCircle {
@@ -97,14 +100,9 @@ body {
     fill: #eeaa99;
 }
 
-.green:hover {
-    fill: #a8e7a8;
-}
 
-.rotate180 {
-    transform: rotate(20deg);
-}
 
+/* BELOW DISABLES SELECTION ON "VOTES" TEXT IN CASE SOMEONE IS CLICK HAPPY*/
 .noselect {
     -webkit-touch-callout: none;
     /* iOS Safari */
@@ -123,7 +121,7 @@ body {
 
 textarea {
     overflow: auto;
-    /* resize: both; */
+    resize: vertical;
     width: 100%;
     font-size: 12px;
     height: 75px;

@@ -1,3 +1,10 @@
+<!-- 
+    Joseph Racca
+    11.9.20
+    Mini Challenge #13 - UpVote
+ -->
+
+
 <!doctype html>
 <html lang="en">
 
@@ -21,7 +28,7 @@
 <body>
 
 
-    <div class="container stickyFooter px-0 roundedTopCorners">
+    <div class="container stickyFooter px-0 roundedTopCorners shadow-lg">
         <div class="borders roundedTopCorners shadow-sm">
             <h1 class="stickyHeader">Questions & Answers</h1>
         </div>
@@ -32,17 +39,17 @@
                 <li class="list-group-item shadow-sm">
                     <div class="row">
                         <div class="col-2 text-center px-0 noselect">
-                            <p>
+                            <div class="col-12 pb-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" length="auto" viewBox="0 0 19 10">
                                     <style type="text/css">
                                     </style>
-                                    <path id="votebtn2" class="gray" d="M9.5 0L19 10H0L9.5 0z" />
+                                    <path id="upVotebtn" class="grey" d="M9.5 0L19 10H0L9.5 0z" />
                                 </svg>
-                                <!-- <img id="votebtn1"class="py-0" src="./images/upArrow.svg" alt="upVote arrow"> -->
+                            </div>
+                            <p>
+                                <span id="voteCount" class="voteCount">0</span>
                                 <br>
-                                <span id="voteCount2" class="voteCount">0</span>
-                                <br>
-                                <span id="votePlural2" class="votesText">VOTES</span>
+                                <span id="votePlural" class="votesText">VOTES</span>
                                 <br>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20px" length="auto" viewBox="0 0 19 10">
                                     <style type="text/css">
@@ -62,8 +69,8 @@
                                     width="34px" height="auto" alt="user-supplied avatar">Joseph Perez</p>
                             <p id="inputToggle"class="commentsBtn">COMMENT</p>
 
-                            <textArea id="inputField" placeholder="Type and press enter." class=""></textArea>
-                            <p id="comment1" class="userComments pt-3">
+                            <textArea id="inputField" placeholder="Type and press enter." class="d-none"></textArea>
+                            <p id="comment" class="userComments pt-3">
                                 <strong>Matt Kaatman</strong> It’s never been important for web development. Much more
                                 important for
                                 other focuses.
@@ -79,7 +86,7 @@
                                 <strong>Patrick Loftus</strong> You can abstract those service connections to separate
                                 utility code to make the function more portable.
                             </p>
-                            <span id="commentToggle1" class="commentsBtn red">HIDE COMMENTS</span>
+                            <span id="commentToggle" class="commentsBtn red">HIDE COMMENTS</span>
                             </p>
                         </div>
                     </div>
